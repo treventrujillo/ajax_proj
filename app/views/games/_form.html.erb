@@ -1,12 +1,12 @@
 <div id="game-form">
   <%= form_for @game do |f| %>
     <div class="input-field">
-      <%= f.label :name %>
+      <%= f.label :name, class: "active" %>
       <%= f.text_field :name %>
     </div>
 
     <div class="input-field">
-      <%= f.label :description %>
+      <%= f.label :description, class: "active" %>
       <%= f.text_field :description %>
     </div>
 

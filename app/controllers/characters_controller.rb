@@ -1,6 +1,6 @@
 class CharactersController < ApplicationController
-  before_action :set_game, only: [:index, :create, :render_json]
-  before_action :set_character, only: [:show, :update, :destroy]
+  before_action :set_game, only: [:index, :create, :new, :edit, :render_json]
+  before_action :set_character, only: [:show, :update, :edit, :destroy]
 
   def index
     @characters = @game.characters
@@ -10,10 +10,15 @@ class CharactersController < ApplicationController
     @character = @game.character
   end
 
+  def new
+    @character = @game.characters.new
+  end
+
   def create
     @character = @game.characters.new(character_params)
     if @character.save
-      render json: @character
+      # render json: @character
+      redirect_to game_characters_path
     else
       render_error(@character)
     end
@@ -27,9 +32,13 @@ class CharactersController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def destroy
     @character.destroy
-    render json: { message: 'removed' }, status: :ok
+    # render json: { message: 'removed' }, status: :ok
+    redirect_to game_characters_path
   end
 
   def render_json

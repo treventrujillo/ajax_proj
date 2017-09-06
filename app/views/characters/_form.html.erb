@@ -1,0 +1,20 @@
+<%= form_for [@game, @character] do |f| %>
+
+  <div class="input-field active">
+    <%= f.label :name, class: "active" %>
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="input-field active">
+    <%= f.label :power, class: "active" %>
+    <%= f.text_field :power %>
+  </div>
+
+  <div class="waves-effect waves-light btn">
+    <%= f.submit %>
+  </div>
+
+  <div class="waves-effect waves-light btn">
+    <%= link_to 'Back', game_characters_path(@game), class: "white-text" %>
+  </div>
+<% end %>
