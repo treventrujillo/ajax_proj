@@ -1,0 +1,17 @@
+<div id="game-form">
+  <%= form_for @game do |f| %>
+    <div class="input-field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="input-field">
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+    </div>
+
+    <div class="waves-effect waves-light btn">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,9 @@
+<h1><%= @game.name %>'s Characters</h1>
+
+<% @game.characters.each do |character| %>
+  <div class="col s12 m6" id="character-list">
+    <h3 id="game">Characters in <%=character.name%></h3>
+    <ul id="characters">
+    </ul>
+  </div>
+<% end %>

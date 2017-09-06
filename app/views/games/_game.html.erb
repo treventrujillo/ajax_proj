@@ -1,0 +1,9 @@
+<li>
+  <div class="game-item" data-id="<%= game.id %>" data-name="<%= game.name %>">
+    <%= game.name %> - <%= game.description %>
+  </div>
+  <button class="btn" id="edit-game"><i class="material-icons">description</i>Edit</button>
+  <button class="btn" id="delete-game"><i class="material-icons">delete</i>Delete</button>
+  <%= link_to 'View Characters', game_characters_path(game[:id]),
+  class: "btn" %>
+</li>

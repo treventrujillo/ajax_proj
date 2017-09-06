@@ -1,0 +1,9 @@
+<h1><%= @game.name %>'s Characters</h1>
+
+<% @game.characters.each do |character| %>
+<div class="divider"></div>
+<div class="section">
+  <h4><%= character.name %></h4>
+  <p><%= character.power %></h4>
+</div>
+<% end %>
